@@ -34,18 +34,16 @@ cmd进入工程根目录路径下(例如:HelloWorld)，执行 pastry bake bower 
 # 使用方法
 1. 由于暂时没有js的原生密码控件，将Registered.html里的Component.Phonecheck中的校验密码的部分注释掉，实际使用时需将以下代码放开：
 
-
-
+```
   /* 
   else if(data.PASSWORD == "" || data.PASSWORD ==   undefined) { 
    Bridge.alert("密码不能为空!");
-   
             .....
-            
    Bridge.alert("支付密码为6位!");
-            }
-            
+    }
  */
+```
+
  
  2.此组件暂时不能用js原生直接向前置发ajax请求，待以后完善。
 # 作者
