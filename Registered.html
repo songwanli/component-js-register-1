@@ -142,15 +142,15 @@
                             if (data.RETCODE === "AAAAAAA") {
                                 return true;
                             } else {
-                                Bridge.errorAlert(data.RETMSG);
+                                alert(data.RETMSG);
                             }
                         },
                         onError: function (state, response) {/*处理错误 ，一般写在组件里面  未定义组件可用写在模型里面*/
                             Bridge.dismissDialog();
                             if (response.RETCODE) {
-                                Bridge.errorAlert({content: response.RETMSG});
+                                alert({content: response.RETMSG});
                             } else {
-                                Bridge.errorAlert({content: "网络连接超时，请检查您的网络！"});
+                                alert({content: "网络连接超时，请检查您的网络！"});
                             }
                         }
                     }
@@ -164,15 +164,15 @@
                             if (data.RETCODE === "AAAAAAA") {
                                 Browser.history_goto("result");
                             } else {
-                                Bridge.errorAlert(data.RETMSG);
+                                alert(data.RETMSG);
                             }
                         },
                         onError: function (state, response) {/*处理错误 ，一般写在组件里面  未定义组件可用写在模型里面*/
                             Bridge.dismissDialog();
                             if (response.RETCODE) {
-                                Bridge.errorAlert({content: response.RETMSG});
+                                alert({content: response.RETMSG});
                             } else {
-                                Bridge.errorAlert({content: "网络连接超时，请检查您的网络！"});
+                                alert({content: "网络连接超时，请检查您的网络！"});
                             }
                         }
                     }
@@ -186,23 +186,27 @@
                 var passwordtext = "" + data.PASSWORD;
                 var pay_passwordtext = "" + data.PAY_PASSWORD;
                 if (data.USERNAME == "" || data.USERNAME == undefined) {
-                    Bridge.alert("手机号不能为空!");
+                    alert("手机号不能为空!");
                 }else if (!username.test(data.USERNAME)) {
-                    Bridge.alert("手机号格式不正确!");
-                }else if(data.PASSWORD == "" || data.PASSWORD == undefined) {
-                    Bridge.alert("密码不能为空!");
+                    alert("手机号格式不正确!");
+                }
+                /*
+                else if(data.PASSWORD == "" || data.PASSWORD == undefined) {
+                    alert("密码不能为空!");
                 }else if(passwordtext.length < 96) {
-                    Bridge.alert("密码不能少于6位!");
+                    alert("密码不能少于6位!");
                 }else if(data.PASSWORD2 !== data.PASSWORD) {
-                    Bridge.alert("两次密码输入不一致!");
+                    alert("两次密码输入不一致!");
                 }else if(data.PAY_PASSWORD == "" || data.PAY_PASSWORD == undefined) {
-                    Bridge.alert("支付密码不能为空!");
+                    alert("支付密码不能为空!");
                 }else if(pay_passwordtext.length !== 96) {
-                    Bridge.alert("支付密码为6位!");
+                    alert("支付密码为6位!");
                 }
                 else if(data.PAY_PASSWORD2 !== data.PAY_PASSWORD) {
-                    Bridge.alert("两次支付密码输入不一致!");
-                }else{
+                    alert("两次支付密码输入不一致!");
+                }
+                 */
+                else{
                     var option = {
                         refresh:{
                             id: "registered",
@@ -235,9 +239,9 @@
                 var data = event.data;
                 var CODEReg = new RegExp("^[a-zA-Z0-9]{6}$");
                 if (data.SMS_CODE == "" || data.SMS_CODE == undefined) {
-                    Bridge.alert("验证码不能为空");
+                    alert("验证码不能为空");
                 } else if (!CODEReg.test(data.SMS_CODE)) {
-                    Bridge.alert("验证码格式不正确");
+                    alert("验证码格式不正确");
                 }else {
                     var data = event.data;
                     var option = {
