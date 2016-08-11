@@ -135,8 +135,7 @@
                     null,
                     {
 
-                        url: "register.do?act=5080003",
-
+                        url: "register/register.do?act=5080003",
                         filter: function (data) {
                             Bridge.dismissDialog();
                             if (data.RETCODE === "AAAAAAA") {
@@ -158,7 +157,7 @@
             "getresult": new Model.Request(
                     null,
                     {
-                        url: "register.do?act=5080031",
+                        url: "register/register.do?act=5080031",
                         filter: function (data) {
                             Bridge.dismissDialog();
                             if (data.RETCODE === "AAAAAAA") {

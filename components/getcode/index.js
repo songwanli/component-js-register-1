@@ -34,7 +34,7 @@ define(["js/core"],
 
                     var self = this;
                     var model = new Model.Request(null, {
-                        url: "cbframework.do?act="+this.act,
+                        url: "register/register.do?act="+this.act,
                         param: self.getParam(),
                         onSuccess: function (state, response) {
                             if (response.RETCODE != "AAAAAAA") {
